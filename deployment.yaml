@@ -18,11 +18,11 @@ spec:
       serviceAccountName: customerapp
       containers:
         - name: customerapp
-          image: docker.io/ashafqat/go-web-service:latest
+          image: docker.io/skhalil9/goapp:latest
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: 9090
               protocol: TCP
           livenessProbe:
             httpGet:
