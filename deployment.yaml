@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customerapp
+  namespace: customerapp
+  labels:
+    app: customerapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: customerapp
+  template:
+    metadata:
+      labels:
+        app: customerapp
+    spec:
+      serviceAccountName: customerapp
+      containers:
+        - name: customerapp
+          image: docker.io/ashafqat/go-web-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            requests:
+              cpu: 300m
+              memory: 512Mi

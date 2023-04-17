@@ -1,0 +1,18 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: customerapp
+  namespace: customerapp
+spec:
+  host: customerapp.apps-crc.testing
+  to:
+    kind: Service
+    name: customerapp
+    weight: 100
+  port:
+    targetPort: https
+  tls:
+    termination: passthrough
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None
+
