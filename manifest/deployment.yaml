@@ -15,7 +15,6 @@ spec:
       labels:
         app: customerapp
     spec:
-      serviceAccountName: customerapp
       containers:
         - name: customerapp
           image: docker.io/skhalil9/goapp:latest

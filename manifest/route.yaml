@@ -4,7 +4,7 @@ metadata:
   name: customerapp
   namespace: customerapp
 spec:
-  host: customerapp.apps-crc.testing
+  host: customerapp.apps.ylgle0lxx7b45c61b7.canadacentral.aroapp.io
   to:
     kind: Service
     name: customerapp
