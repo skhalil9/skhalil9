@@ -10,9 +10,6 @@ spec:
     name: customerapp
     weight: 100
   port:
-    targetPort: https
-  tls:
-    termination: passthrough
-    insecureEdgeTerminationPolicy: Redirect
+    targetPort: http
   wildcardPolicy: None
 
