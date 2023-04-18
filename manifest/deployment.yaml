@@ -6,7 +6,7 @@ metadata:
   labels:
     app: customerapp
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: customerapp
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: customerapp
-          image: docker.io/skhalil9/seifkhalil:latest
+          image: docker.io/skhalil9/seifkhalil:final
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
