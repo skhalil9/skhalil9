@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: customerapp
-          image: docker.io/ashafqat/go-web-service
+          image: docker.io/skhalil9/getting-started:latest
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
